@@ -1,6 +1,6 @@
 # discordia/ — Microblog Platform
 
-Plataforma de microblog com tema dark moderno, construída com **Angular 19** usando a API de Signals e componentes standalone.
+Plataforma de microblog com tema dark moderno, construída com **Angular 21** usando a API de Signals e componentes standalone.
 
 ---
 
