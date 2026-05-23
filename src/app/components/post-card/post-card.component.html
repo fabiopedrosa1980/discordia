@@ -1,0 +1,51 @@
+<article class="post-card">
+  <header class="post-header">
+    <div class="avatar" [style.background]="post().avatarGradient">
+      {{ post().initials }}
+    </div>
+    <div class="post-meta">
+      <span class="post-name">{{ post().name }}</span>
+      <span class="post-handle">{{ post().handle }}</span>
+    </div>
+    <span class="post-time">{{ post().time }}</span>
+  </header>
+
+  <p class="post-body" [innerHTML]="post().body | hashtag"></p>
+
+  <footer class="post-actions">
+    <!-- Like -->
+    <button
+      class="action-btn"
+      [class.liked]="post().liked"
+      (click)="onLike()"
+      [attr.aria-label]="post().liked ? 'Descurtir' : 'Curtir'"
+    >
+      <svg class="icon" viewBox="0 0 24 24">
+        @if (post().liked) {
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        } @else {
+          <path fill="none" stroke="currentColor" stroke-width="1.8"
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        }
+      </svg>
+      @if (post().likes > 0) { <span>{{ post().likes }}</span> }
+    </button>
+
+    <!-- Repost -->
+    <button
+      class="action-btn"
+      [class.reposted]="post().reposted"
+      (click)="onRepost()"
+      [attr.aria-label]="post().reposted ? 'Desfazer repost' : 'Repostar'"
+    >
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        [attr.stroke-width]="post().reposted ? 2.5 : 1.8">
+        <path d="M17 1l4 4-4 4"/>
+        <path d="M3 11V9a4 4 0 014-4h14"/>
+        <path d="M7 23l-4-4 4-4"/>
+        <path d="M21 13v2a4 4 0 01-4 4H3"/>
+      </svg>
+      @if (post().reposts > 0) { <span>{{ post().reposts }}</span> }
+    </button>
+  </footer>
+</article>

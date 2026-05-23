@@ -1,0 +1,37 @@
+<div class="compose-card">
+  <div class="compose-top">
+    <div class="avatar">YO</div>
+    <div class="compose-field">
+      <textarea
+        [value]="text()"
+        (input)="onInput($any($event.target).value)"
+        placeholder="O que está acontecendo?"
+        rows="3"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="compose-footer">
+    <div class="counter-group">
+      <svg class="progress-ring" viewBox="0 0 28 28">
+        <circle class="ring-bg" cx="14" cy="14" r="11" />
+        <circle
+          class="ring-fill"
+          cx="14" cy="14" r="11"
+          [attr.stroke]="ringColor()"
+          [attr.stroke-dashoffset]="ringOffset()"
+          stroke-dasharray="69.1"
+        />
+      </svg>
+      <span class="char-count" [class]="charClass()">{{ remaining() }}</span>
+    </div>
+
+    <button
+      class="btn-post"
+      [disabled]="!canPost()"
+      (click)="publish()"
+    >
+      Publicar
+    </button>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.feed-label {
+  font-size: 11px;
+  font-family: 'Space Mono', monospace;
+  color: #3e3e52;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-left: 2px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: #3e3e52;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  .empty-icon {
+    font-size: 28px;
+    opacity: 0.4;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
