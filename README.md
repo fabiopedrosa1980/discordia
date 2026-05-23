@@ -1,4 +1,4 @@
-# pulse/ — Microblog Platform
+# discordia/ — Microblog Platform
 
 Plataforma de microblog com tema dark moderno, construída com **Angular 19** usando a API de Signals e componentes standalone.
 
@@ -8,7 +8,7 @@ Plataforma de microblog com tema dark moderno, construída com **Angular 19** us
 
 | Camada | Tecnologia |
 |---|---|
-| Framework | Angular 19 (standalone components) |
+| Framework | Angular 21 (standalone components) |
 | Reatividade | Signals (`signal`, `computed`) |
 | Estilos | SCSS com variáveis CSS |
 | Tipografia | DM Sans + Space Mono (Google Fonts) |
