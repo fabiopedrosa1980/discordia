@@ -1,17 +1,36 @@
 .feed-label {
   font-size: 11px;
-  font-family: 'Space Mono', monospace;
-  color: #3e3e52;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   padding-left: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-green);
+  animation: pulseLive 1.5s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(1); opacity: 1; box-shadow: 0 0 4px var(--accent-green); }
+  50% { transform: scale(1.3); opacity: 0.6; box-shadow: 0 0 12px var(--accent-green); }
+  100% { transform: scale(1); opacity: 1; box-shadow: 0 0 4px var(--accent-green); }
 }
 
 .empty-state {
   text-align: center;
   padding: 48px 20px;
-  color: #3e3e52;
+  color: var(--text-secondary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +38,9 @@
 
   .empty-icon {
     font-size: 28px;
-    opacity: 0.4;
+    opacity: 0.3;
+    color: var(--accent-purple);
+    text-shadow: 0 0 10px var(--accent-purple-glow);
   }
 
   p {

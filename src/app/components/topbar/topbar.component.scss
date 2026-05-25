@@ -1,31 +1,39 @@
 .topbar {
-  background: #0d0d14;
-  border-bottom: 1px solid #1e1e2e;
-  padding: 14px 20px;
+  background: rgba(13, 13, 20, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--surface-border);
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  font-family: 'Space Mono', monospace;
-  font-size: 17px;
+  font-family: var(--font-mono);
+  font-size: 18px;
   font-weight: 700;
   background: linear-gradient(135deg, #a78bfa, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.5px;
+  transition: opacity var(--transition-fast);
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .avatar-top {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +41,11 @@
   font-weight: 600;
   color: #fff;
   cursor: pointer;
-  transition: opacity 0.2s;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 
-  &:hover { opacity: 0.85; }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+  }
 }
