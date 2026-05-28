@@ -116,17 +116,7 @@
     }
   }
 
-  &.reposted {
-    color: #10b981;
-    border-color: rgba(16, 185, 129, 0.25);
-    background: rgba(16, 185, 129, 0.08);
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
 
-    &:hover {
-      background: rgba(16, 185, 129, 0.12);
-      border-color: rgba(16, 185, 129, 0.4);
-    }
-  }
 
   .icon {
     width: 15px;

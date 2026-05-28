@@ -1,7 +1,15 @@
 <div class="compose-card">
   <div class="compose-top">
-    <div class="avatar">YO</div>
+    <div class="avatar">✦</div>
     <div class="compose-field">
+      <input
+        class="name-input"
+        type="text"
+        [value]="authorName()"
+        (input)="onNameInput($any($event.target).value)"
+        placeholder="Seu nome (opcional — será Anônimo)"
+        maxlength="40"
+      />
       <textarea
         [value]="text()"
         (input)="onInput($any($event.target).value)"

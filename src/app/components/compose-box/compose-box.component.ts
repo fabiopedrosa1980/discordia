@@ -16,6 +16,7 @@ export class ComposeBoxComponent {
 
   readonly maxChars = MAX_CHARS;
   text = signal('');
+  authorName = signal('');
 
   remaining = computed(() => MAX_CHARS - this.text().length);
   progress = computed(() => this.text().length / MAX_CHARS);
@@ -42,9 +43,14 @@ export class ComposeBoxComponent {
     this.text.set(value);
   }
 
+  onNameInput(value: string): void {
+    this.authorName.set(value);
+  }
+
   publish(): void {
     if (!this.canPost()) return;
-    this.postService.addPost(this.text().trim());
+    this.postService.addPost(this.text().trim(), this.authorName().trim());
     this.text.set('');
+    this.authorName.set('');
   }
 }

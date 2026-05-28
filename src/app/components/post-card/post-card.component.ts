@@ -13,8 +13,6 @@ import { HashtagPipe } from '../../services/hashtag.pipe';
 export class PostCardComponent {
   post = input.required<Post>();
   liked = output<number>();
-  reposted = output<number>();
 
-  onLike(): void  { this.liked.emit(this.post().id); }
-  onRepost(): void { this.reposted.emit(this.post().id); }
+  onLike(): void { this.liked.emit(this.post().id); }
 }

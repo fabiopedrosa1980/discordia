@@ -15,8 +15,7 @@ export class FeedComponent {
 
   posts = this.postService.posts;
 
-  onLike(id: number)   { this.postService.toggleLike(id); }
-  onRepost(id: number) { this.postService.toggleRepost(id); }
+  onLike(id: number) { this.postService.toggleLike(id); }
 
   trackById(_: number, post: { id: number }) { return post.id; }
 }

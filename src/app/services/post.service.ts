@@ -65,13 +65,31 @@ export class PostService {
   readonly posts = computed(() => this._posts());
   private nextId = 10;
 
-  addPost(body: string): void {
+  addPost(body: string, authorName?: string): void {
+    const name = authorName?.trim() || 'Anônimo';
+    const initials = name
+      .split(' ')
+      .slice(0, 2)
+      .map(w => w[0]?.toUpperCase() ?? '')
+      .join('');
+    const handle = '@' + name.toLowerCase().replace(/\s+/g, '').slice(0, 12);
+
+    const gradients = [
+      'linear-gradient(135deg, #7c3aed, #2563eb)',
+      'linear-gradient(135deg, #0ea5e9, #2563eb)',
+      'linear-gradient(135deg, #f43f5e, #e11d48)',
+      'linear-gradient(135deg, #10b981, #059669)',
+      'linear-gradient(135deg, #a78bfa, #7c3aed)',
+      'linear-gradient(135deg, #f59e0b, #d97706)',
+    ];
+    const avatarGradient = gradients[this.nextId % gradients.length];
+
     const newPost: Post = {
       id: this.nextId++,
-      name: 'Você',
-      handle: '@voce',
-      initials: 'YO',
-      avatarGradient: 'linear-gradient(135deg, #7c3aed, #2563eb)',
+      name,
+      handle,
+      initials,
+      avatarGradient,
       body,
       time: 'agora',
       likes: 0,

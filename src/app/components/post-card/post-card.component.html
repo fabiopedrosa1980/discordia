@@ -13,7 +13,6 @@
   <p class="post-body" [innerHTML]="post().body | hashtag"></p>
 
   <footer class="post-actions">
-    <!-- Like -->
     <button
       class="action-btn"
       [class.liked]="post().liked"
@@ -29,23 +28,6 @@
         }
       </svg>
       @if (post().likes > 0) { <span>{{ post().likes }}</span> }
-    </button>
-
-    <!-- Repost -->
-    <button
-      class="action-btn"
-      [class.reposted]="post().reposted"
-      (click)="onRepost()"
-      [attr.aria-label]="post().reposted ? 'Desfazer repost' : 'Repostar'"
-    >
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        [attr.stroke-width]="post().reposted ? 2.5 : 1.8">
-        <path d="M17 1l4 4-4 4"/>
-        <path d="M3 11V9a4 4 0 014-4h14"/>
-        <path d="M7 23l-4-4 4-4"/>
-        <path d="M21 13v2a4 4 0 01-4 4H3"/>
-      </svg>
-      @if (post().reposts > 0) { <span>{{ post().reposts }}</span> }
     </button>
   </footer>
 </article>
